@@ -1,1 +1,3 @@
-mit sed 
+sed -e n\;d <EMV_chain_6x0_private | sed 's/............//;s/...$//' >data_private_only
+
+this separates private and public key from vanity generated addresses
