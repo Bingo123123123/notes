@@ -1,3 +1,23 @@
+#Initialise geth
+
 geth --port 30304 --rpc --rpcaddr 127.0.0.1 --rpcport 8101 --datadir 00 --networkid 19720502 init myGenesis.json
 
+
+#fire up node with nohup so it stays when ssh window is closed
+
 nohup geth --port 30304 --rpc --rpcaddr 127.0.0.1 --rpcport 8101 --datadir 00 --networkid 19720502 &
+
+#go to the java console
+sudo geth attach ./00/geth.ipc 
+
+#create an account
+personal.newAccount("PAssword")
+
+#start mining
+miner.start()
+
+#check bootnodeinfo
+admin.nodeInfo.enode
+
+#replace @[::] with public IP address
+
