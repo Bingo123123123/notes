@@ -1,3 +1,23 @@
 sed -e n\;d <EMV_chain_6x0_private | sed 's/............//;s/..$//' >data_public_only
 
 this separates private and public key from vanity generated addresses
+
+
+add " at the beginning of each line in the testfile and write it to testfile2
+awk '{print "\""$0}' testfile >testfile2
+
+add ":{ at the end of each line in the testfile and write it to testfile2
+sed 's/$/\":{/' test > test2
+
+this adds "balance:" "100"}, every other line
+sed '0~1 a\"balance": "100"},\'
+
+combine the three commmands to get a ge ne sis file
+awk '{print "\""$0}' test >testfile1 && sed 's/$/\":{/' testfile1 > testfile2 && sed '0~1 a\"balance": "100"},\' testfile2 > testfilefinal
+
+also using 1e18 for 1ETH 
+also using 1e24 for 1mio ETH
+also using 1e25 for 10 mio ETH
+actually 1e2 is not an integer don not use this but rathcer 10000000000000000 etc
+
+
