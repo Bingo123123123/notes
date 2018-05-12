@@ -1,0 +1,8 @@
+#create a file with 10 adresses starting with 00 named outputfile_both_adresses.txt
+
+vanityeth -n 10 -i 00&>> outputfile_both_adresses.txt
+
+sed 's/..............//;s/...............................................................................$//' outputfile_both_adresses.txt > output_public_key.txt
+
+
+
