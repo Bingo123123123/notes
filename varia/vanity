@@ -7,6 +7,27 @@ vanityeth -n 10 -i 00&>> outputfile_both_adresses.txt
 #cutting everything but the private adresses
 -------------------
 sed 's/..............//;s/...............................................................................$//' outputfile_both_adresses.txt > output_public_key.txt
+Input
+✔ {"address":"0x997cb57cfdbff63f1de1a7dfaa0d11394ae516d1","privKey":"edd7ea6d4052b117be2ad1e97e10ecd08a9c0e87a97f2e6fdea89ac3efd4be22"}
+Outup 
+"0x997cb57cfdbff63f1de1a7dfaa0d11394ae516d1
+
+-------------------
+#cutting everything but the "private adresses"
+-------------------
+
+sed 's/.............//;s/..............................................................................$//' outputfile_both_adresse.txt > output_public_key.txt
+Input
+✔ {"address":"0x997cb57cfdbff63f1de1a7dfaa0d11394ae516d1","privKey":"edd7ea6d4052b117be2ad1e97e10ecd08a9c0e87a97f2e6fdea89ac3efd4be22"}
+Output "0x997cb57cfdbff63f1de1a7dfaa0d11394ae516d1"
+
+-------------------
+add a comma after each line
+-------------------
+
+sed "s/$/,/g"  output_public_key.txt > outkomma.txt
+
+
 
 -------------------
 #create a file with 340 random numbers between 0 and 1 
