@@ -1,8 +1,13 @@
 #create a file with 10 adresses starting with 00 named outputfile_both_adresses.txt
+-------------------
+
 
 vanityeth -n 10 -i 00&>> outputfile_both_adresses.txt
 
 sed 's/..............//;s/...............................................................................$//' outputfile_both_adresses.txt > output_public_key.txt
 
+#create a file with 340 random numbers between 0 and 1 
+ perl -le 'print int(rand(1001))/1000 for(1..340)' > random_number_outputfile.txt
+ 
 
 
