@@ -21,18 +21,37 @@ Input
 ✔ {"address":"0x997cb57cfdbff63f1de1a7dfaa0d11394ae516d1","privKey":"edd7ea6d4052b117be2ad1e97e10ecd08a9c0e87a97f2e6fdea89ac3efd4be22"}
 Output "0x997cb57cfdbff63f1de1a7dfaa0d11394ae516d1"
 
--------------------
-add a comma after each line
--------------------
+//-------------------
+//add a " and a comma after each line
+//-------------------
 
-sed "s/$/,/g"  output_public_key.txt > outkomma.txt
+sed "s/$/",/g"  input_file.txt > output1.txt
+
+//-------------------
+//add " at the beginning and end of each line 
+//-------------------
+
+sed 's/^/"/' output1.txt > ouput2.txt  
+
+//-------------------
+//add something at the beginning of a file
+//-------------------
+//sed '1 s/^/This is my first line\n/' inputfile.txt
+sed '1 s/^/var randomNumber1 =[]; randomNumber1 = [\n/' output2.txt > output3.txt
+
+
+
+//-------------------
+//add something at the end of a file
+//-------------------
+
 
 
 
 -------------------
-#create a file with 340 random numbers between 0 and 1 
+#create a file with 888 random numbers between 0 and 1 
 -------------------
-perl -le 'print int(rand(1001))/1000 for(1..340)' > random_number_outputfile.txt
+perl -le 'print int(rand(1001))/1000 for(1..888)' > random_number.txt
 -------------------
 
 
